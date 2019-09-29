@@ -8,6 +8,12 @@
 			margin: 0;
 			padding: 0;
 		}
+		.header {
+			width: 1920px;
+			height: 74px;
+			background: url("./headBg.png") 0 0 no-repeat;
+			background-size: 100%;
+		}
 		.view{
 			width: 1920px;
 			height: 1080px;
@@ -16,12 +22,15 @@
 	</style>
 </head>
 <body>
-	<div class="view"></div>
+	<div class="view">
+		<div class="header"></div>
+		<div class="mes"></div>
+	</div>
 	<script>
 		function getViewData() {
 			var html = document.getElementsByTagName('html')[0];
-			var view = document.getElementsByClassName('view')[0];
-			view.innerHTML =
+			var mes = document.getElementsByClassName('mes')[0];
+			mes.innerHTML =
 				"<h3>浏览器窗口信息如下: </h3>" +
 				"屏幕分辨率为：" + screen.width + "*" + screen.height
 				+ "<br />" +
