@@ -18,40 +18,43 @@
 <body>
 	<div class="view"></div>
 	<script>
-		var body = document.getElementsByTagName('body')[0];
-		var html = document.getElementsByTagName('html')[0];
-		var view = document.getElementsByClassName('view')[0];
-		view.innerHTML =
-			"<h3>浏览器窗口信息如下: </h3>" +
-			"屏幕分辨率为：" + screen.width + "*" + screen.height
-			+ "<br />" +
-			"屏幕可用大小：" + screen.availWidth + "*" + screen.availHeight
-			+ "<br />" +
-			"网页可见区域宽：" + html.clientWidth
-			+ "<br />" +
-			"网页可见区域高：" + html.clientHeight
-			+ "<br />" +
-			"网页可见区域宽(含边线宽)：" + html.offsetWidth
-			+ "<br />" +
-			"网页可见区域高(含边线高)：" + html.offsetHeight
-			+ "<br />" +
-			"网页正文全文宽：" + html.scrollWidth
-			+ "<br />" +
-			"网页正文全文高：" + html.scrollHeight
-			+ "<br />" +
-			"网页被卷去的高：" + (html.scrollHeight - html.clientHeight)
-			+ "<br />" +
-			"网页被卷去的左：" + (html.scrollWidth - html.clientWidth)
-			+ "<br />" +
-			"屏幕分辨率的高：" + window.screen.height
-			+ "<br />" +
-			"屏幕分辨率的宽：" + window.screen.width
-			+ "<br />" +
-			"屏幕可用工作区高度：" + window.screen.availHeight
-			+ "<br />" +
-			"屏幕可用工作区宽度：" + window.screen.availWidth
-			+ "<br />" +
-			"调整好后刷新页面"
+		function getViewData() {
+			var html = document.getElementsByTagName('html')[0];
+			var view = document.getElementsByClassName('view')[0];
+			view.innerHTML =
+				"<h3>浏览器窗口信息如下: </h3>" +
+				"屏幕分辨率为：" + screen.width + "*" + screen.height
+				+ "<br />" +
+				"屏幕可用大小：" + screen.availWidth + "*" + screen.availHeight
+				+ "<br />" +
+				"网页可见区域宽：" + html.clientWidth
+				+ "<br />" +
+				"网页可见区域高：" + html.clientHeight
+				+ "<br />" +
+				"网页可见区域宽(含边线宽)：" + html.offsetWidth
+				+ "<br />" +
+				"网页可见区域高(含边线高)：" + html.offsetHeight
+				+ "<br />" +
+				"网页正文全文宽：" + html.scrollWidth
+				+ "<br />" +
+				"网页正文全文高：" + html.scrollHeight
+				+ "<br />" +
+				"网页被卷去的高：" + (html.scrollHeight - html.clientHeight)
+				+ "<br />" +
+				"网页被卷去的左：" + (html.scrollWidth - html.clientWidth)
+				+ "<br />" +
+				"屏幕分辨率的高：" + window.screen.height
+				+ "<br />" +
+				"屏幕分辨率的宽：" + window.screen.width
+				+ "<br />" +
+				"屏幕可用工作区高度：" + window.screen.availHeight
+				+ "<br />" +
+				"屏幕可用工作区宽度：" + window.screen.availWidth
+				+ "<br />" +
+				"调整好后刷新页面"
+		}
+		getViewData();
+		window.addEventListener('resize',getViewData)
 	</script>
 </body>
 </html>
